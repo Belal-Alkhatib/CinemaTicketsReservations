@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">Cinema Tickets Reservations</string>
+    <string name="imdb">IMDb</string>
+    <string name="rate6_10">6.8</string>
+    <string name="rotten_tomatoes">Rotten Tomatoes</string>
+    <string name="rate63_100">63</string>
+    <string name="ign">IGN</string>
+    <string name="rate4_10">4</string>
+    <string name="film_name">Fantastic Beasts: The Secrets of Dumbledore</string>
+    <string name="fantasy">Fantasy</string>
+    <string name="adventure">Adventure</string>
+    <string name="actor_image">actor image</string>
+    <string name="filme_description">Professor Albus Dumbledore knows the powerful, dark wizard Gellert Grindelwald is moving to seize control of the wizarding world. Unable to stop him...</string>
+    <string name="booking">Booking</string>
+    <string name="of10">/10</string>
+    <string name="percentile">%</string>
 </resources>

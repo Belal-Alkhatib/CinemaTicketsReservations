@@ -11,14 +11,14 @@ val PurpleGrey40 = Color(0xFF625b71)
 val Pink40 = Color(0xFF7D5260)
 
 val Orange = Color(0xFFFD5524)
-val layoutBackground = Color(0xFFFEFEFE)
+val CardBackground = Color(0xFFFEFEFE)
 
 val PrimaryTextColor = Color(0xFF0C1011)
 val SecondaryTextColor = Color(0xFF2B2D2C)
 val ThirdTextColor = Color(0xFF7A7A7A)
 
 val SelectedCardColor = Color(0xFF948B7E)
-val BorderCardColor = Color(0xFFEDEDED)
+val BorderCardColor = Color(0xFFE0E0E0)
 
 val Gray = Color(0xFF404040)
 
