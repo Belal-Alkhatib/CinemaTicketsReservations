@@ -1,18 +1,21 @@
 package com.b.alkhatib.cinematicketsreservations.screens
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -21,32 +24,63 @@ import com.b.alkhatib.cinematicketsreservations.R
 import com.b.alkhatib.cinematicketsreservations.composable.ActorsList
 import com.b.alkhatib.cinematicketsreservations.composable.BigTitle
 import com.b.alkhatib.cinematicketsreservations.composable.ButtonWithIcon
+import com.b.alkhatib.cinematicketsreservations.composable.CancelButton
 import com.b.alkhatib.cinematicketsreservations.composable.ContentDescription
 import com.b.alkhatib.cinematicketsreservations.composable.FilmDetailsCoverImage
+import com.b.alkhatib.cinematicketsreservations.composable.FilmTimeCard
+import com.b.alkhatib.cinematicketsreservations.composable.ActiveButton
 import com.b.alkhatib.cinematicketsreservations.composable.RateInformation
 import com.b.alkhatib.cinematicketsreservations.composable.SpacerHorizontal
 import com.b.alkhatib.cinematicketsreservations.composable.SpacerVertical
 import com.b.alkhatib.cinematicketsreservations.composable.TextWithRoundedBorder
 import com.b.alkhatib.cinematicketsreservations.ui.theme.CardBackground
+import com.b.alkhatib.cinematicketsreservations.ui.theme.FilmTimeCardColor
 
 @Preview(backgroundColor = 0xFFFDFDFD)
 @Composable
 fun FilmDetailsScreen() {
     Column(modifier = Modifier.fillMaxSize()) {
-        FilmDetailsCoverImage(
-            painter = painterResource(id = R.drawable.booking_cover),
+        Box(
             modifier = Modifier
-                .weight(1f)
-                .fillMaxWidth()
-                .aspectRatio(4 / 5f),
+                .weight(2f)
+                .padding(vertical = 16.dp)
+        ) {
 
+            FilmDetailsCoverImage(
+                painter = painterResource(id = R.drawable.booking_cover),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .aspectRatio(4 / 5f),
             )
+
+            ActiveButton(
+                modifier = Modifier.align(Alignment.Center),
+                painterIcon = painterResource(id = R.drawable.ic_play)
+            ) {}
+
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 16.dp),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                CancelButton {}
+                FilmTimeCard(
+                    time = stringResource(id = R.string.film_time),
+                    contentColor = Color.White,
+                    containerColor = FilmTimeCardColor
+                )
+            }
+
+        }
+
 
 
         Card(
             modifier = Modifier
                 .fillMaxWidth()
-                .weight(2f),
+                .weight(4f),
             colors = CardDefaults.cardColors(containerColor = CardBackground),
             shape = RoundedCornerShape(32.dp)
         ) {
@@ -91,11 +125,14 @@ fun FilmDetailsScreen() {
                     TextWithRoundedBorder(title = stringResource(R.string.adventure))
                 }
 
+
                 SpacerVertical(space = 24)
                 ActorsList()
 
+
                 SpacerVertical(space = 24)
                 ContentDescription(title = stringResource(R.string.filme_description))
+
 
                 Spacer(modifier = Modifier.weight(1f))
 

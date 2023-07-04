@@ -19,10 +19,16 @@ val ThirdTextColor = Color(0xFF7A7A7A)
 
 val SelectedCardColor = Color(0xFF948B7E)
 val BorderCardColor = Color(0xFFE0E0E0)
+val FilmTimeCardColor = Color(0xCC303B3C)
 
 val Gray = Color(0xFF404040)
+val GrayIconColor = Color(0xFF6B7777)
 
-val CancelButtonBackground = Color(0xFF9E674C)
+val CancelButtonBackground = Color(0xE39E674C)
+
+val NormalButtonStrokeColor = Color(0xFF966340)
+
+val FullOpacetyColor = Color(0xC1011)
 
 
 

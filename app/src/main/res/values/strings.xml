@@ -14,4 +14,10 @@
     <string name="booking">Booking</string>
     <string name="of10">/10</string>
     <string name="percentile">%</string>
+    <string name="cancel">cancel</string>
+    <string name="time">time is 2 hour</string>
+    <string name="film_time">2h 23m</string>
+    <string name="play">Play Button</string>
+    <string name="coming_soon">Coming Soon</string>
+    <string name="new_showing">New Showing</string>
 </resources>

@@ -13,18 +13,15 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.b.alkhatib.cinematicketsreservations.R
 import com.b.alkhatib.cinematicketsreservations.ui.theme.Orange
 import com.b.alkhatib.cinematicketsreservations.ui.theme.Product
 
 @Composable
-fun ButtonWithIcon(painter: Painter, title: String = "",modifier: Modifier = Modifier,  onClick: () -> Unit) {
+fun ButtonWithIcon(painter: Painter, title: String = "", modifier: Modifier = Modifier,  onClick: () -> Unit) {
     Button(
         onClick = { onClick() },
         colors = ButtonDefaults.buttonColors(containerColor = Orange),
@@ -51,15 +48,6 @@ fun ButtonWithIcon(painter: Painter, title: String = "",modifier: Modifier = Mod
             )
         }
     }
-
-}
-
-@Preview
-@Composable
-fun test() {
-    ButtonWithIcon(
-        painterResource(id = R.drawable.ic_play)
-    ) {}
 
 }
 
