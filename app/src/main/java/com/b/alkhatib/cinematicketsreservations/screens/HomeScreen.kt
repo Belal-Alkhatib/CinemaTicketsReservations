@@ -44,7 +44,16 @@ import com.google.accompanist.pager.rememberPagerState
 fun HomeScreen() {
 
     val covers = listOf<Int>(
-        R.drawable.main_poster, R.drawable.first_poster, R.drawable.second_poster
+        R.drawable.secrets_of_dumbledore_posters1,
+        R.drawable.secrets_of_dumbledore_posters2,
+        R.drawable.secrets_of_dumbledore_posters3,
+        R.drawable.secrets_of_dumbledore_posters4,
+        R.drawable.secrets_of_dumbledore_posters5,
+        R.drawable.secrets_of_dumbledore_posters6,
+        R.drawable.secrets_of_dumbledore_posters7,
+        R.drawable.secrets_of_dumbledore_posters8,
+        R.drawable.secrets_of_dumbledore_posters9,
+        R.drawable.secrets_of_dumbledore_posters10,
     )
 
     val pagerState = rememberPagerState(covers.size)
@@ -55,15 +64,20 @@ fun HomeScreen() {
         Box(
             modifier = Modifier
                 .fillMaxHeight()
-                .weight(3f)
+                .weight(5f)
                 .background(
                     brush = Brush.verticalGradient(
-                    colors = listOf(Color.Transparent, Color.White),
-                    startY = 0f,
-                    endY = Float.POSITIVE_INFINITY)
-        )) {
+                        colors = listOf(Color.Transparent, Color.White),
+                        startY = 0f,
+                        endY = Float.POSITIVE_INFINITY
+                    )
+                )
+        ) {
 
-            BlurImage(resourceId = covers[pagerState.currentPage], modifier = Modifier.height(100.dp))
+            BlurImage(
+                resourceId = covers[pagerState.currentPage],
+                modifier = Modifier.height(100.dp)
+            )
 
             Column {
                 Row(
@@ -86,27 +100,23 @@ fun HomeScreen() {
 
                 }
 
-                Row{
+                Row {
                     FilmsCoverSlider(pagerState = pagerState, covers = covers)
                 }
             }
-
-
         }
 
         //todo: film info
         Row(
             modifier = Modifier
-                .fillMaxWidth()
-                .weight(1f)
-                .background(CardBackground),
+                .fillMaxSize()
+                .weight(2f),
             verticalAlignment = Alignment.CenterVertically
         ) {
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.SpaceEvenly,
                 modifier = Modifier
-                    .fillMaxHeight()
+                    .fillMaxSize()
                     .background(CardBackground)
             ) {
                 FilmTimeCard(
@@ -118,7 +128,7 @@ fun HomeScreen() {
                 SpacerVertical(space = 16)
                 BigTitle(title = stringResource(R.string.film_name))
 
-                SpacerVertical(space = 24)
+                SpacerVertical(space = 16)
                 Row(
                     modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center
                 ) {
@@ -129,7 +139,7 @@ fun HomeScreen() {
             }
         }
 
-        //todo: bottom nav
+
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -143,7 +153,6 @@ fun HomeScreen() {
             IconButton(painter = painterResource(id = R.drawable.ic_search))
             IconButton(painter = painterResource(id = R.drawable.ic_my_ticket))
             IconButton(painter = painterResource(id = R.drawable.ic_profile))
-
         }
 
 

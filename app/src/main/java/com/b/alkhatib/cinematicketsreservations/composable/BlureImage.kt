@@ -8,8 +8,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
-import com.b.alkhatib.cinematicketsreservations.R
 import com.b.alkhatib.cinematicketsreservations.modifier.blurImage
 
 @Composable
@@ -27,10 +25,4 @@ fun BlurImage(resourceId: Int, modifier: Modifier = Modifier) {
             )
         ).blurImage(),
     )
-}
-
-@Preview
-@Composable
-fun ttt() {
-    BlurImage(resourceId = R.drawable.main_poster)
 }

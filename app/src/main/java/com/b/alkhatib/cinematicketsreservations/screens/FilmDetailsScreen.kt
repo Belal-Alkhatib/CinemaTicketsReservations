@@ -50,7 +50,7 @@ fun FilmDetailsScreen() {
                 painter = painterResource(id = R.drawable.booking_cover),
                 modifier = Modifier
                     .fillMaxWidth()
-                    .aspectRatio(4 / 5f),
+                    .aspectRatio(4 / 5.95f),
             )
 
             ActiveButton(
@@ -77,12 +77,18 @@ fun FilmDetailsScreen() {
 
 
 
+        SpacerVertical(space = 32)
         Card(
             modifier = Modifier
                 .fillMaxWidth()
                 .weight(4f),
             colors = CardDefaults.cardColors(containerColor = CardBackground),
-            shape = RoundedCornerShape(32.dp)
+            shape = RoundedCornerShape(
+                topStart = 32.dp,
+                topEnd = 32.dp,
+                bottomStart = 0.dp,
+                bottomEnd = 0.dp
+            )
         ) {
             Column(
                 modifier = Modifier
