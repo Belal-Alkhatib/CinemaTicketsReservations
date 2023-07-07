@@ -15,12 +15,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.b.alkhatib.cinematicketsreservations.R
+import com.b.alkhatib.cinematicketsreservations.Screen
 import com.b.alkhatib.cinematicketsreservations.composable.ActiveButton
 import com.b.alkhatib.cinematicketsreservations.composable.BigTitle
 import com.b.alkhatib.cinematicketsreservations.composable.BlurImage
@@ -36,14 +36,14 @@ import com.b.alkhatib.cinematicketsreservations.ui.theme.FullOpacetyColor
 import com.b.alkhatib.cinematicketsreservations.ui.theme.NormalButtonStrokeColor
 import com.b.alkhatib.cinematicketsreservations.ui.theme.SecondaryTextColor
 import com.google.accompanist.pager.ExperimentalPagerApi
+import com.google.accompanist.pager.PagerState
 import com.google.accompanist.pager.rememberPagerState
 
-
 @OptIn(ExperimentalPagerApi::class)
-@Preview(backgroundColor = 0xFFFDFDFD)
 @Composable
-fun HomeScreen() {
-
+fun HomeScreen(
+    navController: NavController
+) {
     val covers = listOf<Int>(
         R.drawable.secrets_of_dumbledore_posters1,
         R.drawable.secrets_of_dumbledore_posters2,
@@ -56,8 +56,18 @@ fun HomeScreen() {
         R.drawable.secrets_of_dumbledore_posters9,
         R.drawable.secrets_of_dumbledore_posters10,
     )
-
     val pagerState = rememberPagerState(covers.size)
+
+    HomeContent(covers, pagerState, onFilmCardClicked = {navController.navigate(Screen.FilmDetailsScreen.rout)})
+}
+
+@OptIn(ExperimentalPagerApi::class)
+@Composable
+fun HomeContent(
+    covers: List<Int>,
+    pagerState: PagerState,
+    onFilmCardClicked: () -> Unit
+) {
 
 
     Column(modifier = Modifier.fillMaxSize()) {
@@ -102,7 +112,10 @@ fun HomeScreen() {
                 }
 
                 Row {
-                    FilmsCoverSlider(pagerState = pagerState, covers = covers)
+                    FilmsCoverSlider(
+                        pagerState = pagerState,
+                        covers = covers,
+                        onFilmCardClicked = { onFilmCardClicked() })
                 }
             }
         }
@@ -127,7 +140,10 @@ fun HomeScreen() {
                 )
 
                 SpacerVertical(space = 16)
-                BigTitle(title = stringResource(R.string.film_name), modifier = Modifier.height(100.dp) )
+                BigTitle(
+                    title = stringResource(R.string.film_name),
+                    modifier = Modifier.height(100.dp)
+                )
 
                 SpacerVertical(space = 16)
                 Row(

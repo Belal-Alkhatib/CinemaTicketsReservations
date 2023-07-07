@@ -20,7 +20,9 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.b.alkhatib.cinematicketsreservations.R
+import com.b.alkhatib.cinematicketsreservations.Screen
 import com.b.alkhatib.cinematicketsreservations.composable.ActorsList
 import com.b.alkhatib.cinematicketsreservations.composable.BigTitle
 import com.b.alkhatib.cinematicketsreservations.composable.ButtonWithIcon
@@ -36,9 +38,18 @@ import com.b.alkhatib.cinematicketsreservations.composable.TextWithRoundedBorder
 import com.b.alkhatib.cinematicketsreservations.ui.theme.CardBackground
 import com.b.alkhatib.cinematicketsreservations.ui.theme.FilmTimeCardColor
 
-@Preview(backgroundColor = 0xFFFDFDFD)
 @Composable
-fun FilmDetailsScreen() {
+fun FilmDetailsScreen(
+    navController: NavController
+) {
+    FilmDetailsContent(
+        onBookingButtonClicked = {navController.navigate(Screen.BuyTicketScreen.rout)}
+    )
+}
+@Composable
+fun FilmDetailsContent(
+    onBookingButtonClicked: () -> Unit
+) {
     Column(modifier = Modifier.fillMaxSize()) {
         Box(
             modifier = Modifier
@@ -146,7 +157,9 @@ fun FilmDetailsScreen() {
                     painter = painterResource(id = R.drawable.ic_ticket),
                     title = stringResource(id = R.string.booking),
                     modifier = Modifier.align(Alignment.CenterHorizontally)
-                ) {}
+                ) {
+                    onBookingButtonClicked()
+                }
 
                 SpacerVertical(space = 32)
 

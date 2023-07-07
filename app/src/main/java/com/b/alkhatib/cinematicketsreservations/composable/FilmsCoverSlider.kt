@@ -17,7 +17,7 @@ import kotlin.math.absoluteValue
 
 @OptIn(ExperimentalPagerApi::class)
 @Composable
-fun FilmsCoverSlider(modifier: Modifier = Modifier, covers: List<Int>, pagerState: PagerState) {
+fun FilmsCoverSlider(modifier: Modifier = Modifier, covers: List<Int>, pagerState: PagerState, onFilmCardClicked: ()->Unit) {
     HorizontalPager(
         modifier = modifier.fillMaxSize(),
         state = pagerState,
@@ -35,9 +35,10 @@ fun FilmsCoverSlider(modifier: Modifier = Modifier, covers: List<Int>, pagerStat
                     alpha = 1f - pageOffset.coerceIn(-0.33f, 0.33f).absoluteValue
                 }
                 .aspectRatio(0.8f)
-                .fillMaxSize()
+                .fillMaxSize(),
+
         ) {
-            RoundCornerImage(painter = painterResource(id = covers[index]))
+            RoundCornerImage(painter = painterResource(id = covers[index]), onFilmCardClick = {onFilmCardClicked()})
         }
     }
 }

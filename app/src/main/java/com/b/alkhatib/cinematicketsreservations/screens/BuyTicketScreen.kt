@@ -23,6 +23,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.b.alkhatib.cinematicketsreservations.R
 import com.b.alkhatib.cinematicketsreservations.composable.ButtonWithIcon
 import com.b.alkhatib.cinematicketsreservations.composable.CancelButton
@@ -39,9 +40,15 @@ import com.b.alkhatib.cinematicketsreservations.ui.theme.PrimaryTextColor
 import com.b.alkhatib.cinematicketsreservations.ui.theme.Product
 import com.b.alkhatib.cinematicketsreservations.ui.theme.ThirdTextColor
 
+@Composable
+fun BuyTicketScreen(
+    navController: NavController
+) {
+    BuyTicketContent()
+}
 @Preview()
 @Composable
-fun BuyTicketScreen() {
+fun BuyTicketContent() {
     Column(
         modifier = Modifier
             .fillMaxSize()
