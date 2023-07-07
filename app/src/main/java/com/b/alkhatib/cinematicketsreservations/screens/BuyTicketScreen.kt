@@ -20,7 +20,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -33,7 +32,6 @@ import com.b.alkhatib.cinematicketsreservations.composable.SpacerVertical
 import com.b.alkhatib.cinematicketsreservations.composable.TextWithCircle
 import com.b.alkhatib.cinematicketsreservations.ui.theme.BlackBackground
 import com.b.alkhatib.cinematicketsreservations.ui.theme.CardBackground
-import com.b.alkhatib.cinematicketsreservations.ui.theme.FilmTimeCardColor
 import com.b.alkhatib.cinematicketsreservations.ui.theme.Gray
 import com.b.alkhatib.cinematicketsreservations.ui.theme.Orange
 import com.b.alkhatib.cinematicketsreservations.ui.theme.PrimaryTextColor
@@ -42,13 +40,14 @@ import com.b.alkhatib.cinematicketsreservations.ui.theme.ThirdTextColor
 
 @Composable
 fun BuyTicketScreen(
-    navController: NavController
+    navController: NavController,
 ) {
-    BuyTicketContent()
+    BuyTicketContent(onCancelButtonClicked = {navController.navigateUp()})
 }
-@Preview()
 @Composable
-fun BuyTicketContent() {
+fun BuyTicketContent(
+    onCancelButtonClicked: () -> Unit
+) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -63,7 +62,9 @@ fun BuyTicketContent() {
 
             ) {
 
-            CancelButton(containerColor = FilmTimeCardColor) {}
+            CancelButton() {
+                onCancelButtonClicked()
+            }
 
             CinemaCarveImage()
 

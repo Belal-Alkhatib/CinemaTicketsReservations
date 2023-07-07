@@ -20,7 +20,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.b.alkhatib.cinematicketsreservations.R
-import com.b.alkhatib.cinematicketsreservations.Screen
 import com.b.alkhatib.cinematicketsreservations.composable.ActiveButton
 import com.b.alkhatib.cinematicketsreservations.composable.BigTitle
 import com.b.alkhatib.cinematicketsreservations.composable.BlurImage
@@ -31,6 +30,7 @@ import com.b.alkhatib.cinematicketsreservations.composable.NormalButton
 import com.b.alkhatib.cinematicketsreservations.composable.SpacerHorizontal
 import com.b.alkhatib.cinematicketsreservations.composable.SpacerVertical
 import com.b.alkhatib.cinematicketsreservations.composable.TextWithRoundedBorder
+import com.b.alkhatib.cinematicketsreservations.screens.FilmDetailsScreen.navigateToFilmDetails
 import com.b.alkhatib.cinematicketsreservations.ui.theme.CardBackground
 import com.b.alkhatib.cinematicketsreservations.ui.theme.FullOpacetyColor
 import com.b.alkhatib.cinematicketsreservations.ui.theme.NormalButtonStrokeColor
@@ -58,7 +58,10 @@ fun HomeScreen(
     )
     val pagerState = rememberPagerState(covers.size)
 
-    HomeContent(covers, pagerState, onFilmCardClicked = {navController.navigate(Screen.FilmDetailsScreen.rout)})
+    HomeContent(covers, pagerState, onFilmCardClicked = { film ->
+        navController.navigateToFilmDetails(film.toString())
+        //navController.navigate("film_details_screen/$film")
+    })
 }
 
 @OptIn(ExperimentalPagerApi::class)
@@ -66,7 +69,7 @@ fun HomeScreen(
 fun HomeContent(
     covers: List<Int>,
     pagerState: PagerState,
-    onFilmCardClicked: () -> Unit
+    onFilmCardClicked: (filmImage: Int) -> Unit
 ) {
 
 
@@ -115,7 +118,9 @@ fun HomeContent(
                     FilmsCoverSlider(
                         pagerState = pagerState,
                         covers = covers,
-                        onFilmCardClicked = { onFilmCardClicked() })
+                        onFilmCardClicked = {
+                            onFilmCardClicked(covers[pagerState.currentPage])
+                        })
                 }
             }
         }

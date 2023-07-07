@@ -11,10 +11,10 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.b.alkhatib.cinematicketsreservations.R
-import com.b.alkhatib.cinematicketsreservations.ui.theme.CancelButtonBackground
+import com.b.alkhatib.cinematicketsreservations.ui.theme.FilmTimeCardColor
 
 @Composable
-fun CancelButton(modifier: Modifier = Modifier, containerColor: Color = CancelButtonBackground, onClick: () -> Unit,) {
+fun CancelButton(modifier: Modifier = Modifier, containerColor: Color = FilmTimeCardColor, onClick: () -> Unit,) {
 
     FloatingActionButton(
         onClick = { onClick() },
