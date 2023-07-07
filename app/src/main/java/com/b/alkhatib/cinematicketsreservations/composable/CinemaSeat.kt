@@ -24,7 +24,7 @@ fun CinemaSeat(painter: Painter, degrees: Float = 0f, modifier: Modifier = Modif
             .clipToBounds()
     ) {
         Image(
-            painter = painter, 
+            painter = painter,
             contentDescription = "Rotated Image",
             modifier = Modifier.fillMaxSize()
         )
