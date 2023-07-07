@@ -16,10 +16,10 @@ fun BigTitle(title: String, modifier: Modifier = Modifier, textAlign: TextAlign 
     Text(
         text = title,
         fontWeight = FontWeight.Normal,
-        fontSize = 32.sp,
+        fontSize = 28.sp,
         fontFamily = Product,
         color = PrimaryTextColor,
         textAlign = textAlign,
-        modifier = modifier.padding(horizontal = 24.dp)
+        modifier = modifier.padding(horizontal = 8.dp),
     )
 }
