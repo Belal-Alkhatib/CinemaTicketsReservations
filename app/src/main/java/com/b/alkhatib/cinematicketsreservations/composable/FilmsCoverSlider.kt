@@ -14,8 +14,9 @@ import com.b.alkhatib.cinematicketsreservations.modifier.calculateCurrentOffsetF
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.PagerState
+import kotlin.math.absoluteValue
 
-
+/*
 @OptIn(ExperimentalPagerApi::class)
 @Composable
 fun FilmsCoverSlider(modifier: Modifier = Modifier, covers: List<Int>, pagerState: PagerState) {
@@ -54,6 +55,39 @@ fun FilmsCoverSlider(modifier: Modifier = Modifier, covers: List<Int>, pagerStat
     }
 
 }
+*/
+
+@OptIn(ExperimentalPagerApi::class)
+@Composable
+fun FilmsCoverSlider(modifier: Modifier = Modifier, covers: List<Int>, pagerState: PagerState) {
+    HorizontalPager(
+        modifier = modifier.fillMaxSize(),
+        state = pagerState,
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalAlignment = Alignment.CenterVertically,
+        itemSpacing = -60.dp
+    ) { index ->
+        val pageOffset = pagerState.calculateCurrentOffsetForPage(index)
+
+        Box(
+            Modifier
+                .graphicsLayer {
+                    scaleX = 1f - pageOffset.coerceIn(-0.4f, 0.4f).absoluteValue
+                    scaleY = 1f - pageOffset.coerceIn(-0.1f, 0.1f).absoluteValue
+                    alpha = 1f - pageOffset.coerceIn(-0.5f, 0.5f).absoluteValue
+                }
+                .aspectRatio(0.6f)
+                .fillMaxSize()
+        ) {
+            RoundCornerImage(painter = painterResource(id = covers[index]))
+        }
+    }
+}
+
+
+
+
+
 
 
 

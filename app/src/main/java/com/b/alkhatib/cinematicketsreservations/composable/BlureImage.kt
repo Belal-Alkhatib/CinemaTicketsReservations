@@ -45,12 +45,3 @@ fun BlurImage(resourceId: Int, modifier: Modifier = Modifier) {
     }
 
 }
-
-@Preview(backgroundColor = 0xFFFFFFFF)
-@Composable
-fun ttt() {
-    BlurImage(
-        resourceId = R.drawable.secrets_of_dumbledore_posters1,
-        modifier = Modifier.fillMaxWidth()
-    )
-}

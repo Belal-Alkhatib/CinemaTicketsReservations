@@ -15,6 +15,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -126,7 +127,7 @@ fun HomeScreen() {
                 )
 
                 SpacerVertical(space = 16)
-                BigTitle(title = stringResource(R.string.film_name))
+                BigTitle(title = stringResource(R.string.film_name), modifier = Modifier.height(100.dp) )
 
                 SpacerVertical(space = 16)
                 Row(
