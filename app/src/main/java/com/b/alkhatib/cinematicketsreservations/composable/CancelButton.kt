@@ -14,12 +14,12 @@ import com.b.alkhatib.cinematicketsreservations.R
 import com.b.alkhatib.cinematicketsreservations.ui.theme.CancelButtonBackground
 
 @Composable
-fun CancelButton(modifier: Modifier = Modifier, onClick: () -> Unit) {
+fun CancelButton(modifier: Modifier = Modifier, containerColor: Color = CancelButtonBackground, onClick: () -> Unit,) {
 
     FloatingActionButton(
         onClick = { onClick() },
         contentColor = Color.White,
-        containerColor = CancelButtonBackground,
+        containerColor = containerColor,
         shape = CircleShape,
         modifier = modifier.size(36.dp)
     ) {

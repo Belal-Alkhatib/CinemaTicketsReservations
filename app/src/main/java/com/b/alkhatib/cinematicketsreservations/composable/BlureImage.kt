@@ -2,27 +2,55 @@ package com.b.alkhatib.cinematicketsreservations.composable
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
+import com.b.alkhatib.cinematicketsreservations.R
 import com.b.alkhatib.cinematicketsreservations.modifier.blurImage
+import com.b.alkhatib.cinematicketsreservations.ui.theme.CardBackground
 
 @Composable
 fun BlurImage(resourceId: Int, modifier: Modifier = Modifier) {
-    Image(
-        painter = painterResource(id = resourceId),
-        contentDescription = null,
-        modifier = modifier
-            .fillMaxWidth()
-        .background(
-            brush = Brush.verticalGradient(
-                colors = listOf(Color.Transparent, Color.White),
-                startY = 0f,
-                endY = Float.POSITIVE_INFINITY
+
+    Box(
+        modifier = Modifier
+            .background(
+                brush = Brush.verticalGradient(
+                    colors = listOf(
+                        CardBackground,
+                        Color.Transparent,
+                    ),
+                    startY = 0.0f,
+                    endY = 0.0f,
+                ),
             )
-        ).blurImage(),
+            .fillMaxSize()
+
+    ) {
+
+        Image(
+            painter = painterResource(id = resourceId),
+            contentDescription = null,
+            modifier = modifier
+                .fillMaxWidth()
+                .blurImage(),
+
+            )
+    }
+
+}
+
+@Preview(backgroundColor = 0xFFFFFFFF)
+@Composable
+fun ttt() {
+    BlurImage(
+        resourceId = R.drawable.secrets_of_dumbledore_posters1,
+        modifier = Modifier.fillMaxWidth()
     )
 }

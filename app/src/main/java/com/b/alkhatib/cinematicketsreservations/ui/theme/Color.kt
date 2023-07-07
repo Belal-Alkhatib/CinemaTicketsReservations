@@ -30,5 +30,10 @@ val NormalButtonStrokeColor = Color(0xFF966340)
 
 val FullOpacetyColor = Color(0xC1011)
 
+val TimeChipBorderColor = Color(0xFFF0F0F0)
+val BlackBackground = Color(0xFF010101)
+
+val Black40 = Color(0x80010101)
+
 
 

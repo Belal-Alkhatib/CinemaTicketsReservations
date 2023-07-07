@@ -12,14 +12,14 @@ import com.b.alkhatib.cinematicketsreservations.ui.theme.PrimaryTextColor
 import com.b.alkhatib.cinematicketsreservations.ui.theme.Product
 
 @Composable
-fun BigTitle(title: String) {
+fun BigTitle(title: String, modifier: Modifier = Modifier, textAlign: TextAlign = TextAlign.Center) {
     Text(
         text = title,
         fontWeight = FontWeight.Normal,
         fontSize = 32.sp,
         fontFamily = Product,
         color = PrimaryTextColor,
-        textAlign = TextAlign.Center,
-        modifier = Modifier.padding(horizontal = 24.dp)
+        textAlign = textAlign,
+        modifier = modifier.padding(horizontal = 24.dp)
     )
 }
