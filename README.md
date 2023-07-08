@@ -5,9 +5,11 @@ This is a mobile app design concept for buying cinema tickets in advance. The ap
 ## Screenshots
 
 ### Home Screen
-![Home Screen](https://github.com/Belal-Alkhatib/TheChance_Docs/blob/main/ticket%20reservations%20app%20media/home_screen.png)
 
-The home screen displays a list of featured movies with their titles, genres, and poster images. Users can scroll through the list to discover new movies.
+<div style="display: flex; align-items: center;">
+    <img src="https://github.com/Belal-Alkhatib/TheChance_Docs/blob/main/ticket%20reservations%20app%20media/home_screen.png" alt="Home Screen" style="width: 200px; margin-right: 20px;">
+    <p>The home screen displays a list of featured movies with their titles, genres, and poster images. Users can scroll through the list to discover new movies.</p>
+</div>
 
 ### Movie Details Screen
 ![Movie Details Screen](https://github.com/Belal-Alkhatib/TheChance_Docs/blob/main/ticket%20reservations%20app%20media/film_details_screen.png)
