@@ -24,7 +24,6 @@ After selecting a showtime, users are directed to the seat selection screen. The
 - Browse a collection of featured movies
 - View movie details, including synopsis and cast
 - Select showtime and date for booking
-- Choose seats from a seating layout
 - Adjust ticket quantity
 - Purchase cinema tickets in advance
 
@@ -43,5 +42,8 @@ After selecting a showtime, users are directed to the seat selection screen. The
 
 ## Credits
 
-The design and concept of this app are for educational purposes and were created by Bilal Alkhatib.
+The design and concept of this app are for educational purposes and were created by Bilal Alkhatib as part of a project at The Chance. It is an implementation of Jetpack Compose, completed in just one week of learning the technology. This project showcases the capabilities of Jetpack Compose and demonstrates the ability to quickly learn and adapt to new technologies.
 
+Special thanks to The Chance community for their support and guidance in the learning process. I'm excited to continue learning and exploring more in the world of Android development.
+
+Note: This app is a design concept and does not include actual backend functionality for purchasing tickets.
